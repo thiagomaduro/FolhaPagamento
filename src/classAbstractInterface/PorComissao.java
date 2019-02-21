@@ -1,18 +1,23 @@
 package classAbstractInterface;
 
-public class PorComissao extends Empregado {
+public class PorComissao extends Empregado implements Commission{
 
-	private double sales;
+	private double vendas;
 
 	// Construtor
-	public PorComissao() {
-
+	public PorComissao(String nome) {
+		super(nome);
+			
+	}
+	
+	public void setVendas(double s) {
+		this.vendas = s;
 	}
 
 	@Override
 	public double getPay() {
-		this.sales = getPay(); //verificar se esta correto!
-		return 0;
+		double resul = vendas * Commission.COMMISSION_RATE; 
+		return resul;
 	}
 
 }

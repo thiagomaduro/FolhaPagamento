@@ -2,15 +2,16 @@ package classAbstractInterface;
 
 public abstract class Empregado {
 
-	private String nome;
+	protected String nome;
 	
 	//Construtor 
 	public Empregado(String nome) {
-		
+		this.nome = nome;
 	}
 
 	public void printPay() {
-		System.out.printf("% ganha: %", this.nome, getPay());
+		System.out.println(this.nome + " ganha " + getPay());
+	
 	}
 
 	public abstract double getPay();
